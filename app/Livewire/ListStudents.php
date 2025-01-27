@@ -6,9 +6,29 @@ use Livewire\Component;
 use App\Models\Student;
 use Livewire\WithPagination;
 use LivewireUI\Modal\ModalComponent;
+
 class ListStudents extends Component
 {
     use WithPagination;
+
+
+    public function edit($studentId)
+    {
+        //$this->dispatch('openModal', 'edit-student', ['studentId' => $studentId]);
+
+        $this->dispatch('openModal', 'edit-student', [
+            'studentId' => $studentId,
+            'modalMaxWidth' => 'md',
+            'closeOnClickAway' => true,
+            'closeOnEscape' => true,
+            'dispatchCloseEvent' => true
+        ]);
+    }
+
+    protected function getListeners()
+    {
+        return ['student-updated' => '$refresh'];
+    }
 
     public function delete($id)
     {
@@ -27,6 +47,4 @@ class ListStudents extends Component
             'students' => $students
         ]);
     }
-
-
 }

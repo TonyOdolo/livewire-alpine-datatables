@@ -43,10 +43,11 @@
                                             <button type="button" class="btn btn-sm btn-info me-2">
                                                 <i class="bi bi-eye"></i> View
                                             </button>
-                                            <button type="button" class="btn btn-sm btn-warning me-2">
+                                            <button type="button" class="btn btn-sm btn-warning me-2" wire:click="edit({{ $student->id }})">
                                                 <i class="bi bi-pencil"></i> Edit
                                             </button>
                                             
+
 
 
                                             <button type="button" wire:confirm="Are you sure you want to delete?" wire:click="delete({{ $student->id }})" class="btn btn-sm btn-danger">

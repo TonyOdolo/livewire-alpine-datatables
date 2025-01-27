@@ -23,7 +23,7 @@
                 x-on:click="closeModalOnClickAway()"
                 class="modal-backdrop fade"
                 :class="{'show': show}"
-                style="position: fixed; inset: 0;"
+                style="position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5);"
             >
             </div>
 
